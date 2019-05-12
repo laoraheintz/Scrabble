@@ -37,9 +37,9 @@ public class Board : MonoBehaviour
         
         // Check that the letters are aligned (horizontally or vertically)
         var isHorizontal = false;
-        if (word.Any(b => b.Line != boxUsed.Line))
+        if (word.Any(box => box.Line != boxUsed.Line))
         {
-            if (word.Any(b => b.Column != boxUsed.Column))
+            if (word.Any(box => box.Column != boxUsed.Column))
                 return false;
         }
         else 

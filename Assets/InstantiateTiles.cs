@@ -2,9 +2,9 @@
 
 public class InstantiateTiles : MonoBehaviour
 {
-    [SerializeField] private GameObject scrabbleLetterPrefab;
+    [SerializeField] private GameObject scrabbleLetterPrefab = null;
     
-    [SerializeField] private Alphabet alphabet;
+    [SerializeField] private Alphabet alphabet = null;
 
 
     public void Awake()

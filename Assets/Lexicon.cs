@@ -21,7 +21,7 @@ public class Lexicon : MonoBehaviour
         var lexicon = Resources.Load<TextAsset>("Lexicon");
         var s = lexicon.text.Split(new[] { "\n" }, StringSplitOptions.None);
 
-        for (var i = 0; i < 4; i++)
+        for (var i = 0; i < s.Length; i++)
         {
             Lexicons[i] = new LexiconNumber(s[i].Split(new[] {" "}, StringSplitOptions.None));
         } 
@@ -29,6 +29,6 @@ public class Lexicon : MonoBehaviour
 
     public static bool CheckWord(string word)
     {
-        return Lexicons[word.Length - 2].NumberLettersWords.Contains(word);
+        return Lexicons[word.Length - 2].NumberLettersWords.Any(word.Contains);
     }
 }

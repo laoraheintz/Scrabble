@@ -8,10 +8,10 @@ public class InstantiateBoard : MonoBehaviour
     [SerializeField] private GameObject wordDoubleBoxPrefab;
     [SerializeField] private GameObject wordTripleBoxPrefab;
 
-    [SerializeField] private Vector2[] letterDoublePositions;
-    [SerializeField] private Vector2[] letterTriplePositions;
-    [SerializeField] private Vector2[] wordDoublePositions;
-    [SerializeField] private Vector2[] wordTriplePositions;
+    [SerializeField] private Vector2[] letterDoublePositions = null;
+    [SerializeField] private Vector2[] letterTriplePositions = null;
+    [SerializeField] private Vector2[] wordDoublePositions = null;
+    [SerializeField] private Vector2[] wordTriplePositions = null;
 
     private Board _board;
 
