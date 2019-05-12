@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lexicon : MonoBehaviour
 {
-    private struct LexiconNumber
+    public struct LexiconNumber
     {
         public readonly string[] NumberLettersWords;
 
@@ -14,7 +14,7 @@ public class Lexicon : MonoBehaviour
         }
     }
     
-    private static readonly LexiconNumber[] Lexicons = new LexiconNumber[4];
+    public static readonly LexiconNumber[] Lexicons = new LexiconNumber[4];
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class Lexicon : MonoBehaviour
     }
 
     /// <summary>
-    /// Check if the word is present in the Scrabble Dictionnary.
+    /// Check if the word is present in the Scrabble Dictionary.
     /// </summary>
     /// <param name="word"></param>
     /// <returns></returns>

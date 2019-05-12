@@ -6,5 +6,5 @@ public interface IStrategy
     /// Pick a move and return it.
     /// </summary>
     /// <returns></returns>
-    Dictionary<Board.Box, Letter> PickWord();
+    Dictionary<Board.Box, Letter> PickWord(Letter[] letters);
 }

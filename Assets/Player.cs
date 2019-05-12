@@ -8,14 +8,12 @@ public class Player : MonoBehaviour
 
     private int _rackCount = 0;
     private IStrategy _strategy;
-    private Board _board;
 
     private readonly Letter[] _rack = new Letter[7];
 
     private void Start()
     {
         _strategy = new AI();
-        _board = transform.parent.GetComponentInChildren<Board>();
     }
 
     /// <summary>
@@ -39,9 +37,9 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Play()
     { 
-        var play = _strategy.PickWord();
+        var play = _strategy.PickWord(_rack);
         ScorePlayer += Board.GetScore(play);
-        _board.PutWord(play); 
+        Board.Instance.PutWord(play); 
         GameManager.Instance.NextTurn();
     }
     
