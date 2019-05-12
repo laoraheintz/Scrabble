@@ -1,21 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InstantiateTiles : MonoBehaviour
 {
     [SerializeField] private GameObject scrabbleLetterPrefab;
     
-    [Serializable]
-    public struct ScrabbleLetter {
-        public string letter;
-        public int score;
-        public int amount;
-    }
-    public ScrabbleLetter[] scrabbleLetters;
+    [SerializeField] private Alphabet alphabet;
+
 
     public void Awake()
     {
-        foreach (var scrabbleLetter in scrabbleLetters)
+        foreach (var scrabbleLetter in alphabet.scrabbleLetters)
         {
             var go = new GameObject(scrabbleLetter.letter);
             go.transform.SetParent(transform);
