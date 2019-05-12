@@ -6,7 +6,7 @@ public class Alphabet : ScriptableObject
 {
   [Serializable]
   public struct ScrabbleLetter {
-    public string letter;
+    public char letter;
     public int score;
     public int amount;
   }

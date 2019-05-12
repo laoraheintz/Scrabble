@@ -11,7 +11,7 @@ public class InstantiateTiles : MonoBehaviour
     {
         foreach (var scrabbleLetter in alphabet.scrabbleLetters)
         {
-            var go = new GameObject(scrabbleLetter.letter);
+            var go = new GameObject(scrabbleLetter.letter.ToString());
             go.transform.SetParent(transform);
             go.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
             
@@ -19,6 +19,7 @@ public class InstantiateTiles : MonoBehaviour
             {
                 var letter = Instantiate(scrabbleLetterPrefab, go.transform);
                 letter.GetComponent<Letter>().Set(scrabbleLetter.letter, scrabbleLetter.score);
+                letter.gameObject.SetActive(false);
             }
         }
     }

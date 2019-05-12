@@ -27,6 +27,11 @@ public class Lexicon : MonoBehaviour
         } 
     }
 
+    /// <summary>
+    /// Check if the word is present in the Scrabble Dictionnary.
+    /// </summary>
+    /// <param name="word"></param>
+    /// <returns></returns>
     public static bool CheckWord(string word)
     {
         return Lexicons[word.Length - 2].NumberLettersWords.Any(word.Contains);

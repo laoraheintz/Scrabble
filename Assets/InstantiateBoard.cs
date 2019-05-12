@@ -23,19 +23,16 @@ public class InstantiateBoard : MonoBehaviour
         {
             for (var j = 0; j < 15; j++)
             {
-                _board.board[i, j].Line = i;
-                _board.board[i, j].Column = j;
-
                 if (letterDoublePositions.Contains(new Vector2(i, j)))
-                    _board.board[i, j].BoxType = Board.BoxType.LetterDouble;
+                    _board.SetBox(i, j, Board.BoxType.LetterDouble);
                 else if (letterTriplePositions.Contains(new Vector2(i, j)))
-                    _board.board[i, j].BoxType = Board.BoxType.LetterTriple;
+                    _board.SetBox(i, j, Board.BoxType.LetterTriple);
                 else if (wordDoublePositions.Contains(new Vector2(i, j)))
-                    _board.board[i, j].BoxType = Board.BoxType.WordDouble;
+                    _board.SetBox(i, j, Board.BoxType.WordDouble);
                 else if (wordTriplePositions.Contains(new Vector2(i, j)))
-                    _board.board[i, j].BoxType = Board.BoxType.WordTriple;
+                    _board.SetBox(i, j, Board.BoxType.WordTriple);
                 else
-                    _board.board[i, j].BoxType = Board.BoxType.None;
+                    _board.SetBox(i, j, Board.BoxType.None);
             }
         }
     }

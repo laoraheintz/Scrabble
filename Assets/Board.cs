@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -23,9 +22,28 @@ public class Board : MonoBehaviour
         WordTriple
     }
 
-    public Box[,] board = new Box[15, 15];
+    private readonly Box[,] _board = new Box[15, 15];
+
+    /// <summary>
+    /// Set the box : i is th Line and j the Column.
+    /// </summary>
+    /// <param name="i"></param>
+    /// <param name="j"></param>
+    /// <param name="boxType"></param>
+    public void SetBox(int i, int j, BoxType boxType)
+    {
+        _board[i, j].Line = i;
+        _board[i, j].Column = j;
+        _board[i, j].BoxType = boxType;
+    }
     
-    public bool CheckWord(Box[] word, Box boxUsed)
+    /// <summary>
+    /// Check that a word can be placed there.
+    /// </summary>
+    /// <param name="word"></param>
+    /// <param name="boxUsed"></param>
+    /// <returns></returns>
+    public bool CheckWordSpace(Box[] word, Box boxUsed)
     {
         // Check that all boxes are available and if not it is the used box
         if (word.Any(box => !CheckBoxAvailability(box) && !box.Equals(boxUsed)))
@@ -63,12 +81,23 @@ public class Board : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// Check that a box is empty.
+    /// </summary>
+    /// <param name="box"></param>
+    /// <returns></returns>
     private static bool CheckBoxAvailability(Box box)
     {
         return box.Letter == null;
     }
     
-    public int GetScore(Dictionary<Box, Letter> word)
+    /// <summary>
+    /// Get the score generate by this move.
+    /// </summary>
+    /// <param name="word"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    public static int GetScore(Dictionary<Box, Letter> word)
     {
         var d = 0;
         var t = 0;
@@ -104,7 +133,11 @@ public class Board : MonoBehaviour
 
         return score;
     }
-    
+
+    /// <summary>
+    /// Put the word on the board.
+    /// </summary>
+    /// <param name="word"></param>
     public void PutWord(Dictionary<Box, Letter> word)
     {
         foreach (var pair in word)
@@ -113,9 +146,15 @@ public class Board : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Put a letter on the box line i and column j. The box looses its type if it had one.
+    /// </summary>
+    /// <param name="letter"></param>
+    /// <param name="i"></param>
+    /// <param name="j"></param>
     private void PutLetter(Letter letter, int i, int j)
     {
-        board[i, j].Letter = letter;
-        board[i, j].BoxType = BoxType.None;
+        _board[i, j].Letter = letter;
+        _board[i, j].BoxType = BoxType.None;
     }
 }

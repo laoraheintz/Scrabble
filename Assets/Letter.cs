@@ -3,16 +3,16 @@ using UnityEngine.UI;
 
 public class Letter : MonoBehaviour
 {
-    private string _letter = "";
+    public char Character { get; private set; } = ' ';
     public int Score { get; private set; } = -1;
 
-    public void Set(string l, int s)
+    public void Set(char l, int s)
     {
-        _letter = l;
+        Character = l;
         Score = s;
         
         var textLetterUI = GetComponentInChildren<Text>();
-        textLetterUI.text = _letter;
+        textLetterUI.text = Character.ToString();
                 
         var textScoreUI = textLetterUI.GetComponentInChildren<Text>();
         textScoreUI.text = Score.ToString();

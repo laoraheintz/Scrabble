@@ -13,84 +13,84 @@ MonoBehaviour:
   m_Name: FrenchAlphabet
   m_EditorClassIdentifier: 
   scrabbleLetters:
-  - letter: A
+  - letter: 65
     score: 1
     amount: 9
-  - letter: B
+  - letter: 66
     score: 3
     amount: 2
-  - letter: C
+  - letter: 67
     score: 3
     amount: 2
-  - letter: D
+  - letter: 68
     score: 2
     amount: 3
-  - letter: E
+  - letter: 69
     score: 1
     amount: 15
-  - letter: F
+  - letter: 70
     score: 4
     amount: 2
-  - letter: G
+  - letter: 71
     score: 2
     amount: 2
-  - letter: H
+  - letter: 72
     score: 4
     amount: 2
-  - letter: I
+  - letter: 73
     score: 1
     amount: 8
-  - letter: J
+  - letter: 74
     score: 8
     amount: 1
-  - letter: K
+  - letter: 75
     score: 10
     amount: 1
-  - letter: L
+  - letter: 76
     score: 1
     amount: 5
-  - letter: M
+  - letter: 77
     score: 2
     amount: 3
-  - letter: N
+  - letter: 78
     score: 1
     amount: 6
-  - letter: O
+  - letter: 79
     score: 1
     amount: 6
-  - letter: P
+  - letter: 80
     score: 3
     amount: 2
-  - letter: Q
+  - letter: 81
     score: 8
     amount: 1
-  - letter: R
+  - letter: 82
     score: 1
     amount: 6
-  - letter: S
+  - letter: 83
     score: 1
     amount: 6
-  - letter: T
+  - letter: 84
     score: 1
     amount: 6
-  - letter: U
+  - letter: 85
     score: 1
     amount: 6
-  - letter: V
+  - letter: 86
     score: 4
     amount: 2
-  - letter: W
+  - letter: 87
     score: 10
     amount: 1
-  - letter: X
+  - letter: 88
     score: 10
     amount: 1
-  - letter: Y
+  - letter: 89
     score: 10
     amount: 1
-  - letter: Z
+  - letter: 90
     score: 10
     amount: 1
-  - letter: ' '
+  - letter: 32
     score: 0
     amount: 2
