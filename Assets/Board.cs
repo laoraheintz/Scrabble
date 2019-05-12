@@ -139,6 +139,10 @@ public class Board : MonoBehaviour
         score *= (int) Mathf.Pow(2, d);
         score *= (int) Mathf.Pow(3, t);
 
+        // Scrabble
+        if (word.Keys.Where(box => box.Letter == null).ToArray().Length == 7)
+            score += 50;
+
         return score;
     }
 
